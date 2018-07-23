@@ -13,6 +13,8 @@
 		560FF1B721034B7100531A7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 560FF1B621034B7100531A7B /* Assets.xcassets */; };
 		560FF1BA21034B7100531A7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 560FF1B821034B7100531A7B /* LaunchScreen.storyboard */; };
 		560FF1BD21034B7100531A7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 560FF1BC21034B7100531A7B /* main.m */; };
+		560FF1C521041B7D00531A7B /* ThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560FF1C421041B7D00531A7B /* ThreadViewController.m */; };
+		560FF1C821041ED100531A7B /* HPThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 560FF1C721041ED100531A7B /* HPThread.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		560FF1B921034B7100531A7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		560FF1BB21034B7100531A7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		560FF1BC21034B7100531A7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		560FF1C321041B7D00531A7B /* ThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadViewController.h; sourceTree = "<group>"; };
+		560FF1C421041B7D00531A7B /* ThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadViewController.m; sourceTree = "<group>"; };
+		560FF1C621041ED100531A7B /* HPThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPThread.h; sourceTree = "<group>"; };
+		560FF1C721041ED100531A7B /* HPThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPThread.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +68,15 @@
 				560FF1AE21034B7000531A7B /* AppDelegate.m */,
 				560FF1B021034B7000531A7B /* ViewController.h */,
 				560FF1B121034B7000531A7B /* ViewController.m */,
+				560FF1C321041B7D00531A7B /* ThreadViewController.h */,
+				560FF1C421041B7D00531A7B /* ThreadViewController.m */,
 				560FF1B321034B7000531A7B /* Main.storyboard */,
 				560FF1B621034B7100531A7B /* Assets.xcassets */,
 				560FF1B821034B7100531A7B /* LaunchScreen.storyboard */,
 				560FF1BB21034B7100531A7B /* Info.plist */,
 				560FF1BC21034B7100531A7B /* main.m */,
+				560FF1C621041ED100531A7B /* HPThread.h */,
+				560FF1C721041ED100531A7B /* HPThread.m */,
 			);
 			path = ThreadKeepAlive;
 			sourceTree = "<group>";
@@ -141,6 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				560FF1C821041ED100531A7B /* HPThread.m in Sources */,
+				560FF1C521041B7D00531A7B /* ThreadViewController.m in Sources */,
 				560FF1B221034B7000531A7B /* ViewController.m in Sources */,
 				560FF1BD21034B7100531A7B /* main.m in Sources */,
 				560FF1AF21034B7000531A7B /* AppDelegate.m in Sources */,

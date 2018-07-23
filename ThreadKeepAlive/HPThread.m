@@ -9,5 +9,8 @@
 #import "HPThread.h"
 
 @implementation HPThread
-
+- (void)dealloc
+{
+    NSLog(@"HPThread--delloc");
+}
 @end
