@@ -19,6 +19,7 @@ void oberserveActivityFun (CFRunLoopObserverRef observer, CFRunLoopActivity acti
             NSLog(@"runloop --kCFRunLoopEntry--mode=%@",CFRunLoopCopyCurrentMode(CFRunLoopGetMain()));
             break;
         case kCFRunLoopBeforeWaiting:
+            
 //            NSLog(@"runloop --kCFRunLoopBeforeWaiting--mode=%@",CFRunLoopCopyCurrentMode(CFRunLoopGetMain()));
 //              NSLog(@"modes=%@",CFRunLoopCopyAllModes(CFRunLoopGetMain()));
             break;
