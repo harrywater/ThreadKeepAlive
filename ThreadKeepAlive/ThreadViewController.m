@@ -29,7 +29,12 @@ void observerLoopActivity (CFRunLoopObserverRef observer, CFRunLoopActivity acti
             NSLog(@"runLoop-kCFRunLoopEntry");
             break;
         case kCFRunLoopBeforeWaiting:
-//            NSLog(@"runloop-kCFRunLoopBeforeWaiting-mode=%@",CFRunLoopCopyCurrentMode(CFRunLoopGetMain()));
+            
+            //            NSLog(@"runloop --kCFRunLoopBeforeWaiting--mode=%@",CFRunLoopCopyCurrentMode(CFRunLoopGetMain()));
+            NSLog(@"runloop --kCFRunLoopBeforeWaiting");
+            break;
+        case kCFRunLoopAfterWaiting:
+            NSLog(@"runloop --kCFRunLoopAfterWaiting");
             break;
         case kCFRunLoopExit:
             NSLog(@"runLoop-kCFRunLoopExit");
@@ -48,7 +53,7 @@ void observerLoopActivity (CFRunLoopObserverRef observer, CFRunLoopActivity acti
         //创建观察者监听runLoop
         CFRunLoopObserverContext context = {0};
         CFRunLoopRef loopf = CFRunLoopGetCurrent();
-        CFRunLoopObserverRef loopObserverf = CFRunLoopObserverCreate(kCFAllocatorDefault, kCFRunLoopEntry|kCFRunLoopExit, YES, 0, observerLoopActivity, &context);
+        CFRunLoopObserverRef loopObserverf = CFRunLoopObserverCreate(kCFAllocatorDefault, kCFRunLoopEntry|kCFRunLoopExit|kCFRunLoopBeforeWaiting|kCFRunLoopAfterWaiting, YES, 0, observerLoopActivity, &context);
         CFRunLoopAddObserver(loopf, loopObserverf, kCFRunLoopDefaultMode);
         CFRelease(loopObserverf);
         
@@ -116,6 +121,7 @@ void observerLoopActivity (CFRunLoopObserverRef observer, CFRunLoopActivity acti
     //注意：waitUntilDone:NO 会出问题。因为主线程不等thread执行完performSelector的task就会继续往下走代码流程，导致delloc执行完，从而销毁了self及其中的isStopRunLoop属性。如果waitUntilDone:NO就会出现坏内存访问，crash。
     //解决方法：waitUntilDone:YES  等待thread处理完threadTask 后再走下面的代码流程("继续走下面的代码---AAA")这样就保障了还是处于delloc方法中，没有执行完，从而self及其属性值都还没有被销毁。
     [self performSelector:@selector(stop) onThread:self.thread withObject:nil waitUntilDone:YES];
+    NSLog(@"继续走下面的代码---AAA");
 }
 - (void)stop
 {
